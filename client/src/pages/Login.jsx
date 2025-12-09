@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Login() {
-  const [isRegister, setIsRegister] = useState(false);
+  const location = useLocation();
+  const [isRegister, setIsRegister] = useState(location.state?.register || false);
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -67,6 +69,14 @@ export default function Login() {
       />
 
       <form onSubmit={handleSubmit} className="w-full max-w space-y-4 m-24 p-4">
+        <button
+          type="button"
+          onClick={() => window.location.href = "/"}
+          className="absolute top-4 right-4 bg-green-200 text-green-800 px-4 py-2 rounded hover:bg-green-300 transition"
+        >
+          Kembali
+        </button>
+
         <h1 className="text-4xl font-bold text-center">
           {isRegister ? "Daftar" : "Login"}
         </h1>

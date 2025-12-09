@@ -41,10 +41,15 @@ function LandingPage() {
             <li><a href="#langganan" className="hover:text-green-600">Langganan</a></li>
             <li><a href="#kontak" className="hover:text-green-600">Kontak</a></li>
             <li>
-              <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+              <Link
+                to="/login"
+                state={{ register: true }}
+                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+              >
                 Daftar
-              </button>
+              </Link>
             </li>
+
             <li>
               <Link
                 to="/login"
@@ -80,9 +85,14 @@ function LandingPage() {
             <a href="#fitur" className="block text-gray-700 hover:text-green-600">Fitur</a>
             <a href="#langganan" className="block text-gray-700 hover:text-green-600">Langganan</a>
             <a href="#kontak" className="block text-gray-700 hover:text-green-600">Kontak</a>
-            <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+            <Link
+              to="/login"
+              state={{ register: true }}
+              className="w-full block bg-green-600 text-white py-2 rounded text-center hover:bg-green-700 transition"
+            >
               Daftar
-            </button>
+            </Link>
+
             <Link
               to="/login"
               className="block text-center border border-green-600 text-green-600 py-2 rounded hover:bg-green-600 hover:text-white transition"
